@@ -1,0 +1,16 @@
+img {
+    margin: 5px;
+}
+
+.miniGalery {
+    display: flex!important;
+    padding-left: 0px;
+}
+
+.insideColumn {
+    width: calc(50% - 5px) !important;
+}
+
+.unique {
+    width: 100% !important;
+}
