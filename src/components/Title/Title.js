@@ -37,8 +37,4 @@ const Title = () => (
   </div>
 );
 
-Title.propTypes = {};
-
-Title.defaultProps = {};
-
 export default Title;
