@@ -4,13 +4,14 @@ import './Gallery.css';
 import axios from '../../axios';
 
 export default function Gallery () {
-  const [adList, setAdList] = useState();
+  const [adList, setAdList] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const {data} = await axios.get('ads');
       setAdList(data);
     };
+    getData();
   });
 
   return <ul id='photos'>
