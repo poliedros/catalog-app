@@ -1,6 +1,6 @@
 {
   "homepage": "http://poliedros.github.io/catalog-app",
-  "name": "infop",
+  "name": "catalog-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
