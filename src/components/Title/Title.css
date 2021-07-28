@@ -16,18 +16,52 @@
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Jost', sans-serif;
     font-size: 10vw;
     text-align: center;
     margin: 0;
 }
 
+.h1-100 {
+    font-weight: 100;
+}
+
+.h1-200 {
+    font-weight: 200;
+}
+
+.h1-300 {
+    font-weight: 200;
+}
+
+.h1-400 {
+    font-weight: 400;
+}
+
+.h1-500 {
+    font-weight: 500;
+    position: relative;
+    top: 15px;
+}
+
+.h1-700 {
+    font-weight: 700;
+}
+
+.h1-800 {
+    font-weight: 800;
+}
+
+.h1-900 {
+    font-weight: 900;
+}
+
 h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.5vw;
     text-align: center;
     font-weight: 400;
-    text-transform: uppercase;
+    
     letter-spacing: 10px;
     /*margin-top: 3em;*/
     margin-bottom: -0.25em;
@@ -92,6 +126,15 @@ email {
 
 hr {
     margin-top: 30px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @media (max-width: 1200px) {

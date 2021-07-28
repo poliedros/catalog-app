@@ -1,0 +1,55 @@
+.navbar {
+    /*overflow: hidden;
+    background-color: white;*/
+    position: fixed;
+    top: 1vh;
+
+    width: 100%;
+    align-items: center;
+
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+}
+  
+.navbar a {
+    float: left;
+    display: block;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    /*letter-spacing: 10px;*/
+}
+  
+.navbar a:hover {
+    background: green;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .navbar a {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar a {
+        font-size: 3.5vw;
+    }
+}

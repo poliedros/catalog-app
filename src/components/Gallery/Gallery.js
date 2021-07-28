@@ -14,7 +14,10 @@ export default function Gallery () {
     getData();
   });
 
+  let value = "Hamburguer";
+
   return <ul id='photos'>
+    {adList.filter(ad => ad.description.includes(value)).map(ad => <Ad url={ad.url} description={ad.description}/>)}
     {adList.map(ad => <Ad url={ad.url} description={ad.description}/>)}
   </ul>
 

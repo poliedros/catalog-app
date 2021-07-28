@@ -1,0 +1,72 @@
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.modal-background {
+    /*position: absolute;*/
+    width: 100vw;
+    height: 100vh;
+    /*background-color: black;*/
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+}
+
+.modal-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3vh;
+}
+
+.modal-frame {
+    width: 100%;
+    height: 20px;
+    background-color: gray;
+    transform: skewY(-6deg);
+    transform-origin: top right;
+}
+
+.modal-container {
+    /*width: 500px;
+    height: 500px;*/
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /*display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;*/
+    width: 90%;
+}
+
+.h1-modal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding: 45px 30px 30px 30px;
+}
+
+.modal-container .h1-modal {
+    
+}
+
+svg {
+    bottom: 0;
+    width: 100%;
+    height: 3vw;
+    /* set height to pixels if you want angle to change with screen width */
+}
