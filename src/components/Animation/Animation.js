@@ -91,7 +91,7 @@ export default function Animation() {
     var mixer;
     var model;
     loader.load(
-      "https://poliedros.github.io/catalog-app/Samba Dancing.fbx", function( gltf ) {
+      "https://poliedros.github.io/catalog-app/Samba_Dancing.fbx", function( gltf ) {
 
         //shadows and materials
         gltf.scene.traverse( function( node ) {
