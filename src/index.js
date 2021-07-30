@@ -19,7 +19,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/catalog-app">
           {/*<React.StrictMode>*/}
             <NavBar />
             <Title />
