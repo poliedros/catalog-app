@@ -57,7 +57,7 @@ export default function Animation() {
     var renderer = new THREE.WebGLRenderer({ alpha: true, antialiase: true });
     renderer.setClearColor( 0x000000, 0 );
 
-    renderer.setSize(300, 300); //(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth*0.3, window.innerHeight*0.3); //(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
     //container = document.getElementById( 'canvas' );
@@ -91,7 +91,7 @@ export default function Animation() {
     var mixer;
     var model;
     loader.load(
-      "https://poliedros.github.io/catalog-app/Samba_Dancing.fbx", function( gltf ) {
+      "https://poliedros.github.io/catalog-app/Samba.glb", function( gltf ) {
 
         //shadows and materials
         gltf.scene.traverse( function( node ) {
@@ -103,22 +103,23 @@ export default function Animation() {
         );
 
         model = gltf.scene;
-        model.scale.set(3.5,3.5,3.5);
+        model.scale.set(0.025,0.025,0.025);
         scene.add(model);
 
         console.log(gltf.animations); //shows all animations imported into the dopesheet in blender
 
         mixer = new THREE.AnimationMixer(model);
-        mixer.clipAction(gltf.animations[1]).play();
+        mixer.clipAction(gltf.animations[0]).play();
 
         document.body.addEventListener("click", kill);
         function kill() {
-          mixer.clipAction(gltf.animations[1]).stop();
+          /*
+          //mixer.clipAction(gltf.animations[1]).stop();
           mixer.clipAction(gltf.animations[0]).play();
           setTimeout(function() {
             mixer.clipAction(gltf.animations[0]).stop();
-            mixer.clipAction(gltf.animations[1]).play();
-          }, 1500);
+            //mixer.clipAction(gltf.animations[1]).play();
+          }, 1500);*/
         }
       }
     );
