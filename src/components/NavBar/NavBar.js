@@ -21,9 +21,9 @@ import './NavBar.css';
 export default function NavBar() {
   return <nav className="navbar">
           <div className="links">
-            <Link to="/">Início</Link>
-            <Link to="/signup">Cadastrar</Link>
-            <Link to="/login">Entrar</Link>
+            <Link to="/catalog-app">Início</Link>
+            <a href="/signuplogin#signup">Cadastrar</a>
+            <a href="/signuplogin#login">Entrar</a>
           </div>
         </nav>
 }

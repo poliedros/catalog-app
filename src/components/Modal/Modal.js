@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal.css';
+import {MagnifierContainer, MagnifierPreview, MagnifierZoom, GlassMagnifier} from 'react-image-magnifiers';
 
 export default function Modal({ closeModal, url, description }) {
   return (
@@ -7,7 +8,13 @@ export default function Modal({ closeModal, url, description }) {
       <div className='modal-main'>
         <div className='modal-container'>
           <h1 className='h1-modal'>{description}</h1>
-          <img src={url} width="105%"></img>
+          {/*<img src={url} width="105%"></img>*/}
+          <GlassMagnifier
+            imageSrc={url}
+            width="100vw"
+            imageAlt="Example"
+            largeImageSrc={url}
+        />
           <p>Nome completo do estabelicimento {description}</p>
           <p>subtitulo</p>
           <p>tipo</p>
