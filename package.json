@@ -9,7 +9,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/react-transition-group": "^4.4.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "cardon": "^1.0.2",
     "chart-race-react": "^1.0.2",
     "photoswipe": "^4.1.3",
