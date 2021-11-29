@@ -20,6 +20,8 @@ import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryIns
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import { ThemeSwitcher } from 'react-bootstrap-theme-switcher';
+
 /*const IMG_URLS = [
   'https://source.unsplash.com/mMa_cpvxeBU/1600x1600',
   'https://source.unsplash.com/ulJYHTb86Bo/1600x1600',
@@ -94,6 +96,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 }*/
 
 ReactDOM.render(
+  <ThemeSwitcher themePath="/themes" defaultTheme="darkly">
   <Router>
     <div>
       <Switch>
@@ -125,7 +128,8 @@ ReactDOM.render(
         </Route>
       </Switch>
     </div>
-  </Router>,
+  </Router>
+  </ThemeSwitcher>,
   document.getElementById('root')
 );
 

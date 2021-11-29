@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ReactDOM from "react-dom";
 import ImageUploading from "react-images-uploading";
 
+import Button from 'react-bootstrap/Button';
+
 import "./UploadImage.css";
 
 /*const UploadImage = () => (
@@ -40,7 +42,8 @@ export default function UploadImage() {
         }) => (
           // write your building UI
           <div className="upload__image-wrapper">
-            <button id="submit" 
+            <Button id="submit"
+              variant="dark"
               style={isDragging ? { color: "red" } : null}
               onClick={onImageUpload}
               {...dragProps}
@@ -49,22 +52,24 @@ export default function UploadImage() {
                 <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
                 CLICK OU ARRASTE PARA AQUI
               </span>
-            </button>
+            </Button>
             &nbsp;
-            <button id="submit" onClick={onImageRemoveAll}>
+            <Button id="submit"
+              variant="dark"
+              onClick={onImageRemoveAll}>
               <span id="span-center">
                 <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
                 ELIMINAR TODAS AS IMAGENS
               </span>
-            </button>
+            </Button>
             <div class="table-upload">
             {imageList.map((image, index) => (
               
                 <div key={index} className="image-item">
                   <img src={image.data_url} alt="" width="100" />
                   <div className="image-item__btn-wrapper">
-                    <button id="submit" class="button-mini" onClick={() => onImageUpdate(index)}>SUBIR</button>
-                    <button id="submit" class="button-mini" onClick={() => onImageRemove(index)}>REMOVER</button>
+                    <Button id="submit" variant="dark" class="button-mini" onClick={() => onImageUpdate(index)}>SUBIR</Button>
+                    <Button id="submit" variant="dark" class="button-mini" onClick={() => onImageRemove(index)}>REMOVER</Button>
                   </div>
                 </div>
               

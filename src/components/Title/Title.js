@@ -1,13 +1,20 @@
 import React from 'react';
 import './Title.css';
 
+//import "bootstrap/dist/css/bootstrap.min.css";
+import "bootswatch/dist/cosmo/bootstrap.min.css"
+//import "react-bootstrap-theme-switcher/themes/darkly/bootstrap.min.css";
+
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 const Title = () => (
   <div>
     <div id="main">
       <h3>
         O seu guia de compras
       </h3>
-      <h1 class="unselectable">
+      <h1 className="unselectable" style={{ fontSize: "10vw" }}>
         <span className="h1-100">G</span>
         <span className="h1-200">A</span>
         <span className="h1-300">L</span>

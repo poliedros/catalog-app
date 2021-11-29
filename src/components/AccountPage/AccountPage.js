@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import './AccountPage.css';
 import UploadImage from '../UploadImage/UploadImage';
 
-import 'photoswipe/dist/photoswipe.css';
-import 'photoswipe/dist/default-skin/default-skin.css';
+//import 'photoswipe/dist/photoswipe.css';
+//import 'photoswipe/dist/default-skin/default-skin.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 
 //import BarChart from 'chart-race-react';
@@ -276,7 +276,7 @@ export default function AccountPage () {
           {/*<i class="icon ion-md-arrow-forward"></i>
           <i class="icon ion-md-arrow-down"></i>*/}
         </a>
-        <div class="answer">
+        <div class="answer" style={{ display: "flex" }}>
           {/*<label>
             Escolher tamanho
           </label>*/}
