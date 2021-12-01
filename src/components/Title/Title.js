@@ -2,7 +2,7 @@ import React from 'react';
 import './Title.css';
 
 //import "bootstrap/dist/css/bootstrap.min.css";
-import "bootswatch/dist/cosmo/bootstrap.min.css"
+import "bootswatch/dist/superhero/bootstrap.min.css"
 //import "react-bootstrap-theme-switcher/themes/darkly/bootstrap.min.css";
 
 import Button from 'react-bootstrap/Button';
