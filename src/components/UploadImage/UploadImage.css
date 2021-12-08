@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  width: 100vw;  
+  /*font-family: sans-serif;
+     
+    background-color: #f6f9fe;
+    height: 100vh; */
+    margin: 10px;
+  }
+  .image-item {
+    display: flex;
+    margin: 10px 0;
+    justify-content: center;
+  }
+  .image-item__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: center;
+  }
+  button {
+    height: 40px;
+    background-color: black;
+    border-top: solid 1px #b3aca7 !important;
+    position: relative;
+  }
+
+  button:hover {
+    background-color: #e2dedb;
+    color: black !important;
+  }
+  
+  #span-center {
+    display: flex;
+    align-items: center;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+  .button-mini {
+    width: 100px !important;
+  }
+
+  .table-upload {
+    overflow: scroll;
+    height: 33vh;
+    margin-top: 10px;
+  }
