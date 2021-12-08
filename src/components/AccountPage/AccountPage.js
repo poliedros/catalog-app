@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import './AccountPage.css';
 import UploadImage from '../UploadImage/UploadImage';
 
-//import 'photoswipe/dist/photoswipe.css';
-//import 'photoswipe/dist/default-skin/default-skin.css';
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 
 //import BarChart from 'chart-race-react';
@@ -235,7 +235,7 @@ export default function AccountPage () {
       <div class="accordion-item" id="personalData">
         <a class="accordion-link" href="#personalData">
           <div class="flex">
-            <h3>Seus Dados de Conta</h3>
+            <h5>Seus Dados de Conta</h5>
             {/*<ul>
               <li>#Figma</li>
               <li>#Sketch</li>
@@ -259,10 +259,23 @@ export default function AccountPage () {
         </div>
         <hr />
     </div>
+    <div class="accordion-item" id="question13">
+        <a class="accordion-link" href="#question13">
+          <div class="flex">
+            <h5>Configurar Tipo</h5>
+          </div>
+          <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/currency_circle_dollar_icon_173214.svg"} width="32px" />
+          <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
+        </a>
+        <div class="answer">
+          <Demo1 />
+        </div>
+        <hr />
+    </div>
       <div class="accordion-item" id="adSetting">
         <a class="accordion-link" href="#adSetting">
           <div class="flex">
-            <h3>Configurar Anúncio</h3>
+            <h5>Configurar Anúncio</h5>
             {/* <ul>
               <li>#Figma</li>
               <li>#Sketch</li>
@@ -323,10 +336,23 @@ export default function AccountPage () {
         </div>
         <hr />
     </div>
+    <div class="accordion-item" id="question23">
+        <a class="accordion-link" href="#question23">
+          <div class="flex">
+            <h5>Galeria de Anúncios</h5>
+          </div>
+          <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/currency_circle_dollar_icon_173214.svg"} width="32px" />
+          <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
+        </a>
+        <div class="answer">
+          <Demo1 />
+        </div>
+        <hr />
+    </div>
       <div class="accordion-item" id="question3">
         <a class="accordion-link" href="#question3">
           <div class="flex">
-            <h3>Pagamento</h3>
+            <h5>Pagamento</h5>
             {/* <ul>
               <li>#Figma</li>
               <li>#Sketch</li>
@@ -349,13 +375,14 @@ export default function AccountPage () {
             <input id="password" type="text" placeholder="TRANFERÊNCIA" disabled />
           </div>*/}
           <Demo1 />
+          <Demo1 />
         </div>
         <hr />
     </div>
       <div class="accordion-item" id="question4">
         <a class="accordion-link" href="#question4">
           <div>
-            <h3>Ajuda</h3>
+            <h5>Ajuda</h5>
             {/*<ul>
               <li>#Figma</li>
               <li>#Sketch</li>
