@@ -13,7 +13,7 @@ export default function SignupLogin() {
       <div class="accordion-item" id="signup">
           <a class="accordion-link" href="#signup">
             <div class="flex">
-              <h3>Cadastrar</h3>
+              <h5>Cadastrar</h5>
             </div>
             <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/arrow_circle_right_icon_173429.svg"} width="32px" />
             <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
@@ -30,7 +30,7 @@ export default function SignupLogin() {
         <div class="accordion-item" id="login">
           <a class="accordion-link" href="#login">
             <div class="flex">
-              <h3>Entrar</h3>
+              <h5>Entrar</h5>
             </div>
             <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/arrow_circle_right_icon_173429.svg"} width="32px" />
             <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />

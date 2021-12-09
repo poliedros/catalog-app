@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 //import App from './App';
+
 import Title from './components/Title/Title';
 import Gallery from './components/Gallery/Gallery';
 import FootNote from './components/FootNote/FootNote';
@@ -16,11 +18,56 @@ import Ad from './components/Ad/Ad';
 import SignupLogin from './components/SignupLogin/SignupLogin';
 
 import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryInstagramStyle';
-//import ZoomSlider from 'react-instagram-zoom-slider';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { ThemeSwitcher } from 'react-bootstrap-theme-switcher';
+//import "bootstrap/dist/css/bootstrap.min.css";
+
+import "bootswatch/dist/cosmo/bootstrap.min.css"
+
+ReactDOM.render(
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/catalog-app">
+          {/*<React.StrictMode>*/}
+            <NavBar />
+            <Title />
+            <Gallery />
+            <FootNote />
+          {/*</React.StrictMode>*/}
+        </Route>
+        <Route exact path="/signuplogin">
+          <NavBar />
+          <SignupLogin />
+        </Route>
+        <Route exact path="/accountPage">
+          {/*<NavBar />*/}
+          <AccountPage />
+        </Route>
+        {/*<Route exact path="/signuplogin">
+          <NavBar />
+          <Signup />
+          {/*<AccountPage /> /}
+          <div id="canvas" />
+        </Route>*/}
+        <Route exact path="/instagram">
+          <NavBar />
+          <GalleryInstagramStyle />
+        </Route>
+      </Switch>
+    </div>
+  </Router>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+//import ZoomSlider from 'react-instagram-zoom-slider';
+//import { ThemeSwitcher } from 'react-bootstrap-theme-switcher';
 
 /*const IMG_URLS = [
   'https://source.unsplash.com/mMa_cpvxeBU/1600x1600',
@@ -94,46 +141,3 @@ import { ThemeSwitcher } from 'react-bootstrap-theme-switcher';
     </div>
   )
 }*/
-
-ReactDOM.render(
-  <ThemeSwitcher themePath="/themes" defaultTheme="darkly">
-  <Router>
-    <div>
-      <Switch>
-        <Route exact path="/catalog-app">
-          {/*<React.StrictMode>*/}
-            <NavBar />
-            <Title />
-            <Gallery />
-            <FootNote />
-          {/*</React.StrictMode>*/}
-        </Route>
-        <Route exact path="/signuplogin">
-          <NavBar />
-          <SignupLogin />
-        </Route>
-        <Route exact path="/accountPage">
-          {/*<NavBar />*/}
-          <AccountPage />
-        </Route>
-        {/*<Route exact path="/signuplogin">
-          <NavBar />
-          <Signup />
-          {/*<AccountPage /> /}
-          <div id="canvas" />
-        </Route>*/}
-        <Route exact path="/instagram">
-          <NavBar />
-          <GalleryInstagramStyle />
-        </Route>
-      </Switch>
-    </div>
-  </Router>
-  </ThemeSwitcher>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
