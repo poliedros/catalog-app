@@ -21,7 +21,7 @@
   button {
     height: 40px;
     background-color: black;
-    border-top: solid 1px #b3aca7 !important;
+    /*border-top: solid 1px #b3aca7 !important;*/
     position: relative;
   }
 
