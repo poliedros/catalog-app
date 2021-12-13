@@ -37,9 +37,15 @@ export default function NavBar() {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="/catalog-app">Início</Nav.Link>
-        <Nav.Link href="/signuplogin#signup">Cadastrar</Nav.Link>
-        <Nav.Link href="/signuplogin#login">Entrar</Nav.Link>
+        <Nav.Link>
+          <Link to="/">Início</Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to='/signuplogin'>Cadastrar</Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to='account-page'>Entrar</Link>
+        </Nav.Link>
 
         {/*<NavDropdown title="Link" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>

@@ -49,7 +49,7 @@ export default function UploadImage() {
               {...dragProps}
             >
               <span id="span-center">
-                <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
+                <img className="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
                 CLICK OU ARRASTE PARA AQUI
               </span>
             </Button>
@@ -58,11 +58,11 @@ export default function UploadImage() {
               variant="dark"
               onClick={onImageRemoveAll}>
               <span id="span-center">
-                <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
+                <img className="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
                 ELIMINAR TODAS AS IMAGENS
               </span>
             </Button>
-            <div class="table-upload">
+            <div className="table-upload">
             {imageList.map((image, index) => (
               
                 <div key={index} className="image-item">
