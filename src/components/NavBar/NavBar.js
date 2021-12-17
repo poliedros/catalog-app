@@ -13,6 +13,8 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Card from 'react-bootstrap/Card';
 
+import SignupLogin from '../SignupLogin/SignupLogin';
+
 /*const NavBar = () => (
   <Router>
     <div>
@@ -27,6 +29,7 @@ import Card from 'react-bootstrap/Card';
 );*/
 
 export default function NavBar() {
+
   return <Navbar bg="" expand="lg" /*sticky="top"*/ style={{ top: "1vh", position: "fixed", width: "100%", alignItems: "center" }}>
   <Container fluid style={{ width: "auto", justifyContent: "center", backgroundColor: "white"}}>
     {/*<Navbar.Brand href="#">Navbar scroll</Navbar.Brand>*/}
@@ -38,13 +41,13 @@ export default function NavBar() {
         navbarScroll
       >
         <Nav.Link>
-          <Link to="/">Início</Link>
+          <Link style={{ textDecoration: 'none' }} to="/">Início</Link>
         </Nav.Link>
         <Nav.Link>
-          <Link to='/signuplogin'>Cadastrar</Link>
+          <Link style={{ textDecoration: 'none' }} to='/signuplogin'>Cadastrar</Link>
         </Nav.Link>
         <Nav.Link>
-          <Link to='account-page'>Entrar</Link>
+          <Link style={{ textDecoration: 'none' }} to={{ pathname: '/signuplogin', props: {key: "1"} }}>Entrar</Link>
         </Nav.Link>
 
         {/*<NavDropdown title="Link" id="navbarScrollingDropdown">

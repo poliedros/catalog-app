@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
@@ -12,6 +12,8 @@ import SignupLogin from './components/SignupLogin/SignupLogin';
 import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryInstagramStyle';
 
 import { HashRouter, Route, Switch } from 'react-router-dom';
+
+import "bootswatch/dist/cosmo/bootstrap.min.css"
 
 /*const IMG_URLS = [
   'https://source.unsplash.com/mMa_cpvxeBU/1600x1600',

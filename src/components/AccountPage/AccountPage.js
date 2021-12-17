@@ -8,6 +8,8 @@ import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 
+import Accordion from 'react-bootstrap/Accordion';
+
 //import BarChart from 'chart-race-react';
 
 //import ZoomSlider from 'react-instagram-zoom-slider';
@@ -229,7 +231,7 @@ export default function AccountPage () {
   console.log()
 
   return (
-  <section>
+  /*<section>
   <div class="container">
     <div class="accordion">
       <div class="accordion-item" id="personalData">
@@ -242,15 +244,15 @@ export default function AccountPage () {
               <li>#Adobe</li>
               <li>#Invision</li>
               <li>#Protopie</li>
-            </ul> */}
+            </ul> /}
           </div>
           <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
           <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
           {/*<i class="icon ion-md-arrow-forward"></i>
-          <i class="icon ion-md-arrow-down"></i>*/}
+          <i class="icon ion-md-arrow-down"></i>/}
         </a>
         <div class="answer">
-          {/*<p>Nome, email, senha, contato, </p>*/}
+          {/*<p>Nome, email, senha, contato, </p>/}
           <div id="side-container">
             <input id="name" type="text" placeholder="JOAQUIM JOSE DA SILVA XAVIER" disabled />
             <input id="email" type="text" placeholder={res2.data.user.email} disabled />
@@ -282,17 +284,17 @@ export default function AccountPage () {
               <li>#Adobe</li>
               <li>#Invision</li>
               <li>#Protopie</li>
-            </ul> */}
+            </ul> /}
           </div>
           <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/gear_six_icon_173122.svg"} width="32px" />
           <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
           {/*<i class="icon ion-md-arrow-forward"></i>
-          <i class="icon ion-md-arrow-down"></i>*/}
+          <i class="icon ion-md-arrow-down"></i>/}
         </a>
         <div class="answer" style={{ display: "flex" }}>
           {/*<label>
             Escolher tamanho
-          </label>*/}
+          </label>/}
           {/*<div class="containerOuter">
             <div class="container1">
               <input type="radio" class="hidden" id="input1" value="4" name="inputs"
@@ -311,7 +313,7 @@ export default function AccountPage () {
               <div class="highlight"></div>
               <div class="overlay"></div>
             </div>
-          </div>*/}
+          </div>/}
           <Demo2 />
           {/*<svg width="0" height="0" viewBox="0 0 40 240">
             <defs>
@@ -327,11 +329,11 @@ export default function AccountPage () {
           </svg>
           <label>
             Selecionar imagem
-          </label>*/}
+          </label>/}
           {/*<div id="side-container">
             <input id="password" placeholder="IMAGEM"></input>
             <input id="submit" type="submit" value="SELECIONAR IMAGEM"></input>
-          </div>*/}
+          </div>/}
           <UploadImage />
         </div>
         <hr />
@@ -359,21 +361,21 @@ export default function AccountPage () {
               <li>#Adobe</li>
               <li>#Invision</li>
               <li>#Protopie</li>
-            </ul> */}
+            </ul> /}
           </div>
           <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/currency_circle_dollar_icon_173214.svg"} width="32px" />
           <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
           {/*<i class="icon ion-md-arrow-forward"></i>
-          <i class="icon ion-md-arrow-down"></i>*/}
+          <i class="icon ion-md-arrow-down"></i>/}
         </a>
         <div class="answer">
-          {/*<p>Descrição de pagamento</p>*/}
+          {/*<p>Descrição de pagamento</p>/}
           {/*<div id="side-container">
             <input id="price" type="text" placeholder={priceValue()} disabled />
             <input id="date" type="text" placeholder="DATA: Hoje" disabled />
             <input id="account" type="text" placeholder="CONTA: 810202930912" disabled />
             <input id="password" type="text" placeholder="TRANFERÊNCIA" disabled />
-          </div>*/}
+          </div>/}
           <Demo1 />
           <Demo1 />
         </div>
@@ -389,18 +391,18 @@ export default function AccountPage () {
               <li>#Adobe</li>
               <li>#Invision</li>
               <li>#Protopie</li>
-            </ul>" */}
+            </ul>" /}
           </div>
           <img class="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/question_icon_172934.svg"} width="32px" />
           <img class="icon ion-md-arrow-down" src={process.env.PUBLIC_URL + "/arrow_circle_down_icon_173432.svg"} width="32px" />
           {/*<i class="icon ion-md-arrow-forward"></i>
-          <i class="icon ion-md-arrow-down"></i>*/}
+          <i class="icon ion-md-arrow-down"></i>/}
         </a>
         <div class="answer">
           <p>Contatos</p>
           {/*<div style={{width: "500px"}}>
               <BarChart />
-          </div>*/}
+          </div>/}
           <div id="Demo12"></div>
           <Gallery>
             <Item
@@ -425,17 +427,88 @@ export default function AccountPage () {
             </Item>
           </Gallery>
         </div>
-        {/*<hr />*/}
+        {/*<hr />/}
     </div>
    </div>
   </div>
-</section>
+</section>*/
+
+    <section>
+      <Accordion flush> {/* defaultActiveKey="0" */}
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Dados de Conta</Accordion.Header>
+          <Accordion.Body>
+            <input id="name" type="text" placeholder="JOAQUIM JOSE DA SILVA XAVIER" disabled />
+            <input id="email" type="text" placeholder={res2.data.user.email} disabled />
+            <input id="password" type="text" placeholder={JSON.parse(res2.config.data).password} disabled />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>Configurar Formato de Anúncio</Accordion.Header>
+          <Accordion.Body>
+            <Demo1 />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>Criar Anúncio</Accordion.Header>
+          <Accordion.Body>
+            <Demo2 />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="3">
+          <Accordion.Header>Criar Anúncio</Accordion.Header>
+          <Accordion.Body>
+            <Demo2 />
+            <UploadImage />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="4">
+          <Accordion.Header>Galeria de Anúncios</Accordion.Header>
+          <Accordion.Body>
+            <Demo1 />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="5">
+          <Accordion.Header>Pagamento</Accordion.Header>
+          <Accordion.Body>
+            <Demo1 />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="6">
+          <Accordion.Header>Ajuda</Accordion.Header>
+          <Accordion.Body>
+          <Gallery>
+                <Item
+                  original="https://placekitten.com/1024/768?image=1"
+                  thumbnail="https://placekitten.com/80/60?image=1"
+                  width="1024"
+                  height="768"
+                >
+                  {({ ref, open }) => (
+                    <img ref={ref} onClick={open} src="https://placekitten.com/80/60?image=1" />
+                  )}
+                </Item>
+                <Item
+                  original="https://placekitten.com/1024/768?image=2"
+                  thumbnail="https://placekitten.com/80/60?image=2"
+                  width="1024"
+                  height="768"
+                >
+                  {({ ref, open }) => (
+                    <img ref={ref} onClick={open} src="https://placekitten.com/80/60?image=2" />
+                  )}
+                </Item>
+              </Gallery>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </section>
   )
 }
 
 AccountPage.propTypes = {};
 
-AccountPage.defaultProps = {};
+AccountPage.defaultProps = { key: "1" };
 
 //ReactDOM.render(<Demo1 />, document.getElementById('Demo12'));
 //export default AccountPage;
