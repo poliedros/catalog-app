@@ -1,11 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, { useState } from 'react';
+import Title from './components/Title/Title';
+import Gallery from './components/Gallery/Gallery';
+import FootNote from './components/FootNote/FootNote';
+import NavBar from './components/NavBar/NavBar';
+import AccountPage from './components/AccountPage/AccountPage';
+import SignupLogin from './components/SignupLogin/SignupLogin';
+import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryInstagramStyle';
+
+import { HashRouter, Route, Switch } from 'react-router-dom';
+
 //import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <HashRouter>
+      <Switch>
+        <Route exact path="/">
+          <NavBar />
+          <Title />
+          <Gallery />
+          <FootNote />
+        </Route>
+        <Route path="/signuplogin">
+          <NavBar />
+          <SignupLogin />
+        </Route>
+        <Route path="/accountPage">
+          {/*<NavBar />*/}
+          <AccountPage />
+        </Route>
+          {/*<Route exact path="/signuplogin">
+          <NavBar />
+          <Signup />
+          {/*<AccountPage /> /}
+          <div id="canvas" />
+          </Route>*/}
+        <Route path="/instagram">
+          <NavBar />
+          <GalleryInstagramStyle />
+        </Route>
+      </Switch>
+    </HashRouter>
+    /*<div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -20,8 +59,8 @@ function App() {
             Learn React
           </a>
         </header>
-    </div>
+    </div>*/
   );
 }
 
-export default App;
+//export default App;

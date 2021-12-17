@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
-import Title from './components/Title/Title';
-import Gallery from './components/Gallery/Gallery';
-import FootNote from './components/FootNote/FootNote';
+import App from './App';
+//import Title from './components/Title/Title';
+//import Gallery from './components/Gallery/Gallery';
+//import FootNote from './components/FootNote/FootNote';
 import reportWebVitals from './reportWebVitals';
-import NavBar from './components/NavBar/NavBar';
-import AccountPage from './components/AccountPage/AccountPage';
-import SignupLogin from './components/SignupLogin/SignupLogin';
-import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryInstagramStyle';
+//import NavBar from './components/NavBar/NavBar';
+//import AccountPage from './components/AccountPage/AccountPage';
+//import SignupLogin from './components/SignupLogin/SignupLogin';
+//import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryInstagramStyle';
 
-import { HashRouter, Route, Switch } from 'react-router-dom';
+//import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import "bootswatch/dist/cosmo/bootstrap.min.css"
+import "bootswatch/dist/cosmo/bootstrap.min.css";
 
 /*const IMG_URLS = [
   'https://source.unsplash.com/mMa_cpvxeBU/1600x1600',
@@ -89,38 +89,9 @@ import "bootswatch/dist/cosmo/bootstrap.min.css"
 }*/
 
 ReactDOM.render(
-  <HashRouter>
-    <div>
-      <Switch>
-        <Route exact path="/">
-          {/*<React.StrictMode>*/}
-            <NavBar />
-            <Title />
-            <Gallery />
-            <FootNote />
-          {/*</React.StrictMode>*/}
-        </Route>
-        <Route path="/signuplogin">
-          <NavBar />
-          <SignupLogin />
-        </Route>
-        <Route path="/accountPage">
-          {/*<NavBar />*/}
-          <AccountPage />
-        </Route>
-        {/*<Route exact path="/signuplogin">
-          <NavBar />
-          <Signup />
-          {/*<AccountPage /> /}
-          <div id="canvas" />
-        </Route>*/}
-        <Route path="/instagram">
-          <NavBar />
-          <GalleryInstagramStyle />
-        </Route>
-      </Switch>
-    </div>
-  </HashRouter>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

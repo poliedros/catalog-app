@@ -11,20 +11,22 @@ export default function Gallery () {
 
   //const slides = [<img src="..." alt="First slide" />, <img src="..." alt="Second slide" />]
 
+  const getData = async () => {
+    const {data} = await axios.get('ads');
+    setAdList(data);
+  };
+
   useEffect(() => {
-    const getData = async () => {
-      const {data} = await axios.get('ads');
-      setAdList(data);
-    };
     getData();
-  });
+  }, adList);
 
   let value = "Hamburguer";
 
   return (
     <ul id='photos'>
       {/*{adList.filter(ad => ad.description.includes(value)).map(ad => <Ad url={ad.url} description={ad.description}/>)}*/}
-      {adList.map(ad => <Ad url={ad.url} description={ad.description}/>)}
+      {adList.map(ad => console.log(ad))}
+      {adList.map(ad => <Ad url={ad.urls[0]} description={ad.description}/>)}
     </ul>
   )
 }

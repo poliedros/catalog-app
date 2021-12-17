@@ -26,7 +26,7 @@ export default function Modal({ show, onHide, closeModal, url, description }) { 
         </ModalBS.Header>
       */}
       <div style={{ textAlign: "right"}}>
-        <CloseButton onClick={ () => closeModal(false) } style={{ marginRight: "16px" }}/>
+        <CloseButton onClick={ () => closeModal(false) } style={{ marginRight: "16px", zIndex: "1" }}/>
       </div>
       <ModalBS.Body style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Figure>
