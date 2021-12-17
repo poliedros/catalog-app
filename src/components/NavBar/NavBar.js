@@ -12,6 +12,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Card from 'react-bootstrap/Card';
+import AccountPage from '../AccountPage/AccountPage';
 
 /*const NavBar = () => (
   <Router>
@@ -27,6 +28,8 @@ import Card from 'react-bootstrap/Card';
 );*/
 
 export default function NavBar() {
+    
+
   return <Navbar bg="" expand="lg" /*sticky="top"*/ style={{ top: "1vh", position: "fixed", width: "100%", alignItems: "center" }}>
   <Container fluid style={{ width: "auto", justifyContent: "center", backgroundColor: "white"}}>
     {/*<Navbar.Brand href="#">Navbar scroll</Navbar.Brand>*/}
