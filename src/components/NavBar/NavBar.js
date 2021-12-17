@@ -12,6 +12,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Card from 'react-bootstrap/Card';
+import AccountPage from '../AccountPage/AccountPage';
 
 import SignupLogin from '../SignupLogin/SignupLogin';
 

@@ -20,6 +20,13 @@ export default function UploadImage() {
     // data for submit
     console.log(imageList, addUpdateIndex);
     setImages(imageList);
+    if (imageList.length == 3){
+        document.getElementById("upload").toggleAttribute("disabled");
+        document.getElementById("upload").removeAttribute("enabled");
+    }else{
+        document.getElementById("upload").toggleAttribute("enabled");
+        document.getElementById("upload").removeAttribute("disabled");
+    }
   };
 
   return (
@@ -28,7 +35,7 @@ export default function UploadImage() {
         multiple
         value={images}
         onChange={onChange}
-        maxNumber={maxNumber}
+        maxNumber={3}
         dataURLKey="data_url"
       >
         {({
@@ -42,21 +49,14 @@ export default function UploadImage() {
         }) => (
           // write your building UI
           <div className="upload__image-wrapper">
-            <Button id="submit"
-              variant="dark"
-              style={isDragging ? { color: "red" } : null}
-              onClick={onImageUpload}
-              {...dragProps}
-            >
+            <Button id="upload" variant="dark" style={isDragging ? { color: "red" } : null} onClick={onImageUpload} {...dragProps}>
               <span id="span-center">
                 <img className="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
                 CLICK OU ARRASTE PARA AQUI
               </span>
             </Button>
             &nbsp;
-            <Button id="submit"
-              variant="dark"
-              onClick={onImageRemoveAll}>
+            <Button id="submit" variant="dark" onClick={()=>{console.log("oi");onImageRemoveAll();document.getElementById("upload").toggleAttribute("enabled");document.getElementById("upload").removeAttribute("disabled");}}>
               <span id="span-center">
                 <img className="icon ion-md-arrow-forward" src={process.env.PUBLIC_URL + "/user_circle_icon_172814.svg"} width="32px" />
                 ELIMINAR TODAS AS IMAGENS

@@ -1,12 +1,14 @@
-import React, { useState, Component } from 'react';
+import React, { useState, Component, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import './AccountPage.css';
 import UploadImage from '../UploadImage/UploadImage';
+import Logout from '../Logout/Logout';
 
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import { useHistory } from 'react-router';
 
 import Accordion from 'react-bootstrap/Accordion';
 
@@ -224,14 +226,28 @@ class Demo2 extends Component {
 }
 
 export default function AccountPage () {
+  let history = useHistory();
   let res = JSON.parse(localStorage.getItem('res'))
   let res2 = localStorage.getItem('res') !== null ? res : null
+  if (res2 == null){
+      console.log("ei");
+      history.push("/signuplogin");
+      return;
+  }
   
-  console.log("res2")
-  console.log()
+  console.log("res2");
+  console.log();
+  console.log(res);
 
+ /*  useEffect(()=>{
+      console.log("oi");
+      if(res2 == null){
+        history.push("/");
+      }
+  }) */
   return (
   /*<section>
+      <Logout fixed="top"/>
   <div class="container">
     <div class="accordion">
       <div class="accordion-item" id="personalData">
@@ -255,8 +271,8 @@ export default function AccountPage () {
           {/*<p>Nome, email, senha, contato, </p>/}
           <div id="side-container">
             <input id="name" type="text" placeholder="JOAQUIM JOSE DA SILVA XAVIER" disabled />
-            <input id="email" type="text" placeholder={res2.data.user.email} disabled />
-            <input id="password" type="text" placeholder={JSON.parse(res2.config.data).password} disabled />
+            <input id="email" type="text" placeholder={res2.data.user.email??""} disabled />
+            <input id="password" type="text" placeholder={JSON.parse(res2.config.data??"").password} disabled />
           </div>
         </div>
         <hr />
