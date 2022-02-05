@@ -182,10 +182,10 @@ input {
   -ms-transition: all 0.3s ease-in-out;
 }
 
-input:hover {
+/* input:hover {
   background: #b3aca7;
   color: #e2dedb;
-}
+} */
 
 #password {
   border-bottom: solid 1px #b3aca7;
@@ -219,7 +219,8 @@ textarea:hover {
 }
 
 #submit {
-  width: 502px;
+  height: auto !important;
+  /*width: 502px;
   
   padding: 0;
   margin: -5px 0px 0px 0px;
@@ -232,11 +233,12 @@ textarea:hover {
   cursor: pointer;
   
   border: solid 1px #b3aca7;
-  border-top: none;
+  border-top: none;*/
 }
 
 #upload {
-    width: 502px;
+  height: auto !important;
+    /*width: 502px;
     
     padding: 0;
     margin: -5px 0px 0px 0px;
@@ -249,7 +251,25 @@ textarea:hover {
     cursor: pointer;
     
     border: solid 1px #b3aca7;
-    border-top: none;
+    border-top: none;*/
+  }
+
+  #removeAll {
+    height: auto !important;
+    /*width: 502px;
+    
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: #b3aca7;
+    
+    outline:none;
+    cursor: pointer;
+    
+    border: solid 1px #b3aca7;
+    border-top: none;*/
   }
 
 #submit:hover {

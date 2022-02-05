@@ -31,9 +31,9 @@ export default function Signup() {
   return (
 
     <form id="form" className="topBefore" onSubmit={async (e) => await submit(e)}>	
-      <input id="name" type="text" placeholder="NOME" onChange={(e) => handle(e)} id="name" value={data.name} />
-      <input id="email" type="text" placeholder="E-MAIL" onChange={(e) => handle(e)} id="email" value={data.email}  />
-      <input id="password" type="password" placeholder="SENHA" onChange={(e) => handle(e)} id="password" value={data.password} autoComplete="on" />
+      <input id="name" type="text" placeholder="NOME" onChange={(e) => handle(e)} value={data.name} />
+      <input id="email" type="text" placeholder="E-MAIL" onChange={(e) => handle(e)} value={data.email}  />
+      <input id="password" type="password" placeholder="SENHA" onChange={(e) => handle(e)} value={data.password} autoComplete="on" />
       {/*<textarea id="message" type="text" placeholder="MESSAGE"></textarea>*/}
       <input id="submit" type="submit" value="CADASTRAR"/>
     </form>

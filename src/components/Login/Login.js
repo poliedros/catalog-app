@@ -36,8 +36,8 @@ export default function Login() {
 
   return  (
     <form id="form" class="topBefore" onSubmit={async (e) => await submit(e)}>
-      <input id="email" type="email" placeholder="E-MAIL" onChange={(e) => handle(e)} id="email" value={data.email} />
-      <input id="password" type="password" placeholder="SENHA" onChange={(e) => handle(e)} id="password" value={data.password} autoComplete="on" />
+      <input id="email" type="email" placeholder="E-MAIL" onChange={(e) => handle(e)} value={data.email} />
+      <input id="password" type="password" placeholder="SENHA" onChange={(e) => handle(e)} value={data.password} autoComplete="on" />
       {/*<textarea id="message" type="text" placeholder="MESSAGE"></textarea>*/}
       <input id="submit" type="submit" value="INICIAR SESSÃO"></input>
       <a href="/signuplogin#signup">Não sou cadastrado</a>

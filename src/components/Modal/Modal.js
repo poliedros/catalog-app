@@ -35,6 +35,7 @@ export default function Modal({ show, onHide, closeModal, url, description }) { 
             height="auto"
             alt="171x180"
             src={ url }
+            style={{ marginTop: "-42px" }}
           />
           <Figure.Caption>
             { description }
