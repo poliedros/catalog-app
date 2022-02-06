@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  width: 100vw;  
+  /* width: 100vw; */  
   /*font-family: sans-serif;
      
     background-color: #f6f9fe;
@@ -31,12 +31,12 @@
   }
   
   #span-center {
-    display: flex;
+    /*display: flex;
     align-items: center;
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .button-mini {

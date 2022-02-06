@@ -86,11 +86,15 @@ svg {
     background-color: black !important;
 }
 
-*, ::after, ::before {
+/* *, ::after, ::before {
     box-sizing: revert !important;
-}
+} */
 
 .button {
     border-top: solid 0 px
  #b3aca7 !important;
+}
+
+.form-check-input {
+    padding: 0px;
 }

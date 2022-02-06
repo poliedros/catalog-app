@@ -31,8 +31,12 @@ import SignupLogin from '../SignupLogin/SignupLogin';
 
 export default function NavBar() {
 
-  return <Navbar bg="" expand="lg" /*sticky="top"*/ style={{ top: "1vh", position: "fixed", width: "100%", alignItems: "center" }}>
-  <Container fluid style={{ width: "auto", justifyContent: "center", backgroundColor: "white"}}>
+  return <Navbar bg="" expand="lg" /*sticky="top"*/ style={{ top: "1vh", position: "fixed", top: "0",
+  left: "0",
+  right: "0",
+  height: "0", alignItems: "center", flexWrap: "wrap" }}>
+  <Container fluid style={{ display: "inline-block",
+    textAlign: "left", width: "auto", justifyContent: "center", backgroundColor: "white"}}>
     {/*<Navbar.Brand href="#">Navbar scroll</Navbar.Brand>*/}
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
@@ -45,11 +49,14 @@ export default function NavBar() {
           <Link style={{ textDecoration: 'none' }} to="/">Início</Link>
         </Nav.Link>
         <Nav.Link>
+          <Link style={{ textDecoration: 'none' }} to="/">Pagar com Código</Link>
+        </Nav.Link>
+        {/*<Nav.Link>
           <Link style={{ textDecoration: 'none' }} to='/signuplogin'>Cadastrar</Link>
         </Nav.Link>
         <Nav.Link>
-          <Link style={{ textDecoration: 'none' }} to={{ pathname: '/signuplogin', props: {key: "1"} }}>Entrar</Link>
-        </Nav.Link>
+          <Link style={{ textDecoration: 'none' }} to='/signuplogin'>Entrar</Link>
+        </Nav.Link>*/}
 
         {/*<NavDropdown title="Link" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>

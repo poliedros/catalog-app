@@ -11,6 +11,7 @@ import SignupLogin from './components/SignupLogin/SignupLogin';
 import GalleryInstagramStyle from './components/GalleryInstagramStyle/GalleryInstagramStyle';
 
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import Logout from './components/Logout/Logout';
 
 //import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -19,12 +20,14 @@ export default function App() {
     <HashRouter>
       <Switch>
         <Route exact path="/">
+          <Logout />
           <NavBar />
           <Title />
           <Gallery />
           <FootNote />
         </Route>
         <Route path="/signuplogin">
+          <Logout />
           <NavBar />
           <SignupLogin />
         </Route>
