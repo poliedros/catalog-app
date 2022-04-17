@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/catalog-app/static/css/main.0c3fe9f3.chunk.css",
-    "main.js": "/catalog-app/static/js/main.04fd892c.chunk.js",
-    "main.js.map": "/catalog-app/static/js/main.04fd892c.chunk.js.map",
-    "runtime-main.js": "/catalog-app/static/js/runtime-main.6c958ae8.js",
-    "runtime-main.js.map": "/catalog-app/static/js/runtime-main.6c958ae8.js.map",
+    "main.js": "/catalog-app/static/js/main.0559d816.chunk.js",
+    "main.js.map": "/catalog-app/static/js/main.0559d816.chunk.js.map",
+    "runtime-main.js": "/catalog-app/static/js/runtime-main.0fc76ad4.js",
+    "runtime-main.js.map": "/catalog-app/static/js/runtime-main.0fc76ad4.js.map",
     "static/css/2.f2751f4e.chunk.css": "/catalog-app/static/css/2.f2751f4e.chunk.css",
-    "static/js/2.32100a7a.chunk.js": "/catalog-app/static/js/2.32100a7a.chunk.js",
-    "static/js/2.32100a7a.chunk.js.map": "/catalog-app/static/js/2.32100a7a.chunk.js.map",
-    "static/js/3.7f7315a1.chunk.js": "/catalog-app/static/js/3.7f7315a1.chunk.js",
-    "static/js/3.7f7315a1.chunk.js.map": "/catalog-app/static/js/3.7f7315a1.chunk.js.map",
+    "static/js/2.d9e25303.chunk.js": "/catalog-app/static/js/2.d9e25303.chunk.js",
+    "static/js/2.d9e25303.chunk.js.map": "/catalog-app/static/js/2.d9e25303.chunk.js.map",
+    "static/js/3.18591330.chunk.js": "/catalog-app/static/js/3.18591330.chunk.js",
+    "static/js/3.18591330.chunk.js.map": "/catalog-app/static/js/3.18591330.chunk.js.map",
     "index.html": "/catalog-app/index.html",
     "static/css/2.f2751f4e.chunk.css.map": "/catalog-app/static/css/2.f2751f4e.chunk.css.map",
     "static/css/main.0c3fe9f3.chunk.css.map": "/catalog-app/static/css/main.0c3fe9f3.chunk.css.map",
-    "static/js/2.32100a7a.chunk.js.LICENSE.txt": "/catalog-app/static/js/2.32100a7a.chunk.js.LICENSE.txt",
+    "static/js/2.d9e25303.chunk.js.LICENSE.txt": "/catalog-app/static/js/2.d9e25303.chunk.js.LICENSE.txt",
     "static/media/default-skin.css": "/catalog-app/static/media/default-skin.f64c3af3.svg",
     "static/media/logo.6ce24c58.svg": "/catalog-app/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6c958ae8.js",
+    "static/js/runtime-main.0fc76ad4.js",
     "static/css/2.f2751f4e.chunk.css",
-    "static/js/2.32100a7a.chunk.js",
+    "static/js/2.d9e25303.chunk.js",
     "static/css/main.0c3fe9f3.chunk.css",
-    "static/js/main.04fd892c.chunk.js"
+    "static/js/main.0559d816.chunk.js"
   ]
 }
