@@ -3,6 +3,9 @@ import './Ad.css';
 import Modal from '../Modal/Modal.js';
 
 import Image from 'react-bootstrap/Image';
+import Figure from 'react-bootstrap/Figure';
+
+//import {MagnifierContainer, MagnifierPreview, MagnifierZoom, GlassMagnifier} from 'react-image-magnifiers';
 
 export default function Ad ({ url, description }) {
     const [openModal, setOpenModal] = useState(false);
@@ -32,3 +35,24 @@ export default function Ad ({ url, description }) {
         </>
     )
 }
+
+    {/*<MagnifierContainer>
+      <div className="example-class">
+      <MagnifierPreview imageSrc={url} />
+      </div>
+      <MagnifierZoom style={{ height: "200px" }} imageSrc={url}/>
+      </MagnifierContainer>
+      <GlassMagnifier
+        imageSrc={url}
+        imageAlt="Example"
+        largeImageSrc={url}
+      />
+    */}
+
+    {/*
+      openModal &&
+      <Modal closeModal={ setOpenModal }
+        url={url}
+        description={ description }
+      />
+    */}

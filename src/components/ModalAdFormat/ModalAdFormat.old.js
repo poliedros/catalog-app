@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import ModalBS from 'react-bootstrap/Modal';
+import Figure from 'react-bootstrap/Figure';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
 
 import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -42,12 +45,17 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
     setAdFormatSelected(adFormatSelected);
   };
 
+  /* const getWidth = async () => {
+    setWidth(adFormatSelected ? adFormatSelected.width ?? -1 : '');
+  }; */
+
   useEffect(() => {
     getSelected();
+    /* getWidth(); */
   }, adFormatSelected);
 
-  let res = JSON.parse(localStorage.getItem('res'));
-  let res2 = localStorage.getItem('res') !== null ? res : null;
+  let res = JSON.parse(localStorage.getItem('res'))
+  let res2 = localStorage.getItem('res') !== null ? res : null
   
   async function postAdFormat() {
     const request = {
@@ -56,14 +64,17 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
       amountCents: price,
       width: width,
       height: height
-    };
-    const token = res2.data.token;
+    }
+    const token = res2.data.token
+
+    console.log(request)
+    console.log(token)
     const headers =  {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-    };
-    await axios.post("/ad-formats", request, { headers: headers });
-    alert("enviou");
+    }
+    await axios.post("/ad-formats", request, { headers: headers })
+    alert("enviou")
   }
 
   async function putAdFormat() {
@@ -73,24 +84,29 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
       amountCents: parseInt(price),
       width: parseInt(width),
       height: parseInt(height)
-    };
-    const token = res2.data.token;
+    }
+    const token = res2.data.token
+
+    console.log(request)
+    console.log(token)
     const headers =  {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-    };
-    await axios.put(`/ad-formats/${id}`, request, { headers: headers });
-    alert("enviou");
+    }
+    await axios.put(`/ad-formats/${id}`, request, { headers: headers })
+    alert("enviou")
   }
 
   async function deleteAdFormat(id) {
-    const token = res2.data.token;
+    const token = res2.data.token
+
+    console.log(token)
     const headers =  {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-    };
-    await axios.delete(`/ad-formats/${id}`, { headers: headers });
-    alert("enviou");
+    }
+    await axios.delete(`/ad-formats/${id}`, { headers: headers })
+    alert("enviou")
   }
 
   const [validated, setValidated] = useState(false);
@@ -104,6 +120,7 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
       postAdFormat();
       getDataFormat();
     }
+    
     setValidated(true);
   };
 
@@ -112,6 +129,7 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
         show={ show }
         onHide={ () => closeModal(false) }
         dialogClassName="modal-90w"
+        //size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered
     >
@@ -137,6 +155,9 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
                   <Form.Group className="mb-3" controlId="">
                     <Form.Label>Formato de Anúncio</Form.Label>
                     <Form.Control value={ name ?? '' } placeholder="Nome" onChange={ event => setName(event.target.value) } />
+                    {/* <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                    </Form.Text> */}
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="">
@@ -177,6 +198,9 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
                     <Form.Control.Feedback type="invalid">
                       Por favor insira um nome para o formato de anúncio.
                     </Form.Control.Feedback>
+                    {/* <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                    </Form.Text> */}
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="">
@@ -189,6 +213,7 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
                     <InputGroup className="mb-3">
                       <InputGroup.Text>R$</InputGroup.Text>
                       <Form.Control style={{ boxSizing: "border-box !important" }} value={price} type="number" placeholder="Reais" onChange={ event => setPrice(event.target.value) } />
+                      {/* <Form.Control style={{ boxSizing: "border-box !important" }} value={price} type="number" placeholder="Centavos de Reais" onChange={ event => setPrice(price + event.target.value) } /> */}
                     </InputGroup>
                   </Form.Group>
                   
@@ -204,7 +229,9 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
                     </Row>
                   </Form.Group>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <Button variant="success" type="submit" style={{ textDecoration: "none", height: "auto" }}>
+                    <Button variant="success" type="submit" style={{ textDecoration: "none", height: "auto" }} /* onClick={ 
+                      _ => postAdFormat()
+                    } */>
                       Confirmar Novo Formato de Anúncio
                     </Button>
                   </div>
@@ -236,12 +263,39 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
                 )
               }
             </div>
+
+            {/* {
+              adFormatList.map(af => 
+              <div class="containerOuter">
+                <div class="container1">
+                  <form /* onSubmit={this.formSubmit} />
+      
+                    <input type="radio" class="hidden" id={ af._id + "b" } value={ af.amountCents/100 } name="inputs" 
+                      /* checked={this.state.selectedOption === af.amountCents/100 }
+                      onChange={this.onValueChange} / />
+                    <label class="entry" for={ af._id + "b" }>
+                      <div class="circle"></div>
+                      <div class="entry-label">{ af.name }</div>
+                    </label>
+                    <div class="highlight"></div>
+                    <div class="overlay"></div>
+                  </form>
+                  <div>
+                    Selected option is : {/* {this.state.selectedOption} /}
+                  </div>
+                  <button className="btn btn-default" type="submit">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              )
+            } */}
           </Col>
         </Row>
         </Container>
       </ModalBS.Body>
       <div style={{ textAlign: "center" }}>
-        <Button onClick={ onHide } style={{ width: "auto" }}>Fechar</Button>
+        <Button onClick={ onHide } style={{ width: "auto" }}>Fechar</Button> {/* onClick={() => closeModal(false)} */}
       </div>
     </ModalBS>
   )
@@ -250,3 +304,5 @@ export default function ModalAdFormat ({ show, onHide, closeModal }) {
 ModalAdFormat.propTypes = {};
 
 ModalAdFormat.defaultProps = {};
+
+//export default ModalAdFormat;

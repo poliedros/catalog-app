@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import axios from '../../axios';
 
 import ModalBS from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
+import Figure from 'react-bootstrap/Figure';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
 
@@ -34,6 +36,9 @@ export default function ModalAd ({ show, onHide, closeModal }) {
 
   const [adSelected, setAdSelected] = useState();
 
+  console.log("ADVICES");
+  console.log(adList);
+
   const getSelected = async () => {
     setAdSelected(adSelected);
   };
@@ -42,7 +47,8 @@ export default function ModalAd ({ show, onHide, closeModal }) {
     getSelected();
   }, adSelected);
 
-  const [adFormatList, setAdFormatList] = useState([]);
+    const [adFormatList, setAdFormatList] = useState([]);
+
   const getDataFormat = async () => {
   const {data} = await axios.get('ad-formats');
     setAdFormatList(data);
@@ -54,9 +60,14 @@ export default function ModalAd ({ show, onHide, closeModal }) {
 
   const [description, setDescription] = useState();
   const [id, setId] = useState();
+
   const [adFormatId, setAdFormatId] = useState();
+  //const [urls, setUrls] = useState();
   const [x, setX] = useState();
   const [y, setY] = useState();
+
+  console.log("FORMATS");
+  console.log(adFormatList);
 
   let res = JSON.parse(localStorage.getItem('res'))
   let res2 = localStorage.getItem('res') !== null ? res : null
@@ -65,7 +76,7 @@ export default function ModalAd ({ show, onHide, closeModal }) {
     const request = {
       description: description,
       adFormatId: adFormatId,
-      images: [],
+      images: [], //urls: [],
       order: {
         x: 0,
         y: 0
@@ -73,6 +84,8 @@ export default function ModalAd ({ show, onHide, closeModal }) {
     }
     const token = res2.data.token
 
+    console.log(request)
+    console.log(token)
     const headers =  {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
@@ -93,14 +106,17 @@ export default function ModalAd ({ show, onHide, closeModal }) {
         y: 0
       }
     }
+    const token = res2.data.token
 
-    const token = res2.data.token;
+    console.log(request)
+    console.log(token)
+    console.log(id)
     const headers =  {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-    };
-    await axios.put(`/ads/${id}`, request, { headers: headers });
-    alert("enviou");
+    }
+    await axios.put(`/ads/${id}`, request, { headers: headers })
+    alert("enviou")
   }
   
   return (
@@ -209,6 +225,33 @@ export default function ModalAd ({ show, onHide, closeModal }) {
                         </Card>
                         }
                       </div>
+                      {/* <div style={{ display: "flex", flexDirection: "column",  width: "30%", alignItems: "center" }}>
+                      <Image style={{ width: "70%", margin: "0px" }}
+                            class='unique'
+                            src={ adSelected.urls[0] ?? '' }
+                            alt={ adSelected.description ?? '' }
+                            title={ adSelected.description ?? '' }
+                      ></Image>
+                      <Button>Remover</Button>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column",  width: "30%", alignItems: "center" }}>
+                      <Image style={{ width: "70%", margin: "0px" }}
+                            class='unique'
+                            src={ adSelected.urls[1] ?? '' }
+                            alt={ adSelected.description ?? '' }
+                            title={ adSelected.description ?? '' }
+                      ></Image>
+                      <Button>Remover</Button>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column",  width: "30%", alignItems: "center" }}>
+                      <Image style={{ width: "70%", margin: "0px" }}
+                            class='unique'
+                            src={ adSelected.urls[2] ?? '' }
+                            alt={ adSelected.description ?? '' }
+                            title={ adSelected.description ?? '' }
+                      ></Image>
+                      <Button>Remover</Button>
+                      </div> */}
                       <Form.Label>Adicionar Imagens ao Anúncio</Form.Label><br/>
                       <UploadImage onChange={ respond => setImagesState(respond)} />
                       <Form.Label>Descrição</Form.Label><br/>
@@ -217,16 +260,110 @@ export default function ModalAd ({ show, onHide, closeModal }) {
                         <FormControl style={{ textDecoration: 'none', boxSizing: "border-box !important" }}
                         value={ description ?? '' } onChange={ event => setDescription(event.target.value) } />
                       </InputGroup>
+                      
+                      {/* <Form.Group className="mb-3" controlId="">
+                        <Form.Label>Descrição</Form.Label>
+                        <Form.Control value={ adSelected.description ?? '' } placeholder="Descrição" onChange={ event => setDescription(event.target.value) } />
+                      </Form.Group> */}
                       <div style={{ display: "flex", justifyContent: "center" }}>
                         <Button variant="success" style={{ textDecoration: "none", height: "auto" }} onClick={ 
                           _ => putAd()
                         }>Confirmar Alterações nesse Anúncio</Button>
                       </div>
                     </Form>
+                {/* {
+                  adFormatList.map(af => 
+                  <div class="containerOuter">
+                    <div class="container1">
+                      <form /* onSubmit={this.formSubmit} *>
+          
+                        <input type="radio" class="hidden" id={ af._id + "a" } value={ af.amountCents/100 } name="inputs" 
+                          /* checked={this.state.selectedOption === af.amountCents/100 }
+                          onChange={this.onValueChange} * />
+                        <label class="entry" for={ af._id + "a" }>
+                          <div class="circle"></div>
+                          <div class="entry-label">{ af.name }</div>
+                        </label>
+                        <div class="highlight"></div>
+                        <div class="overlay"></div>
+                      </form>
+                      <div>
+                        Selected option is : {/* {this.state.selectedOption} *}
+                      </div>
+                      <button className="btn btn-default" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                  )
+                }
+
+                <div style={{ display: "flex", flexDirection: "column",  width: "30%", alignItems: "center" }}>
+                <Image style={{ width: "70%", margin: "0px" }}
+                      class='unique'
+                      src={ adSelected.urls[0] ?? '' }
+                      alt={ adSelected.description ?? '' }
+                      title={ adSelected.description ?? '' }
+                ></Image>
+                <Button>Remover</Button>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column",  width: "30%", alignItems: "center" }}>
+                <Image style={{ width: "70%", margin: "0px" }}
+                      class='unique'
+                      src={ adSelected.urls[1] ?? '' }
+                      alt={ adSelected.description ?? '' }
+                      title={ adSelected.description ?? '' }
+                ></Image>
+                <Button>Remover</Button>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column",  width: "30%", alignItems: "center" }}>
+                <Image style={{ width: "70%", margin: "0px" }}
+                      class='unique'
+                      src={ adSelected.urls[2] ?? '' }
+                      alt={ adSelected.description ?? '' }
+                      title={ adSelected.description ?? '' }
+                ></Image>
+                <Button>Remover</Button>
+                </div>
+                <UploadImage onChange={ respond => setImagesState(respond)} />
+                </div>
+                <InputGroup className="mb-3" style={{ textDecoration: 'none', boxSizing: "border-box !important" }}>
+                  <InputGroup.Checkbox style={{ textDecoration: 'none', padding: "0px" }} />
+                  <FormControl style={{ textDecoration: 'none', boxSizing: "border-box !important" }} value={ adSelected.description ?? '' } defeultValue={ adSelected.description ?? '' } />
+                </InputGroup>
+                <Button>Confirmar Alteração no Anúncio</Button> */}
                 </div>
               </>
               :
               <>
+                {/* <div class="containerOuter">
+                  <div class="container1">
+                    <form /* onSubmit={this.formSubmit} *>
+                      {
+                        adFormatList.map(af => 
+                          <>
+                              <input type="radio" class="hidden" id={ af._id + "a" } value={ af.amountCents/100 } name="inputs" 
+                                /* checked={this.state.selectedOption === af.amountCents/100 }
+                                onChange={this.onValueChange} * />
+                              <label class="entry" for={ af._id + "a" }>
+                                <div class="circle"></div>
+                                <div class="entry-label">{ af.name }</div>
+                              </label>
+                              
+                          </>
+                        )
+                      }
+                      <div class="highlight"></div>
+                      <div class="overlay"></div>
+                    </form>
+                    <div>
+                      Selected option is : {/* {this.state.selectedOption} *}
+                    </div>
+                    <button className="btn btn-default" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </div> */}
                 <Form style={{ marginBottom: "1.5rem"}}>
                   <Form.Label>Formato desse Anúncio</Form.Label><br/>
                   <div style={{ marginBottom: "1.5rem", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
@@ -295,7 +432,7 @@ export default function ModalAd ({ show, onHide, closeModal }) {
         </Container>
       </ModalBS.Body>
       <div style={{ textAlign: "center" }}>
-        <Button onClick={ onHide } style={{ width: "auto" }}>Fechar</Button>
+        <Button onClick={ onHide } style={{ width: "auto" }}>Fechar</Button> {/* onClick={() => closeModal(false)} */}
       </div>
     </ModalBS>
   )
@@ -304,3 +441,5 @@ export default function ModalAd ({ show, onHide, closeModal }) {
 ModalAd.propTypes = {};
 
 ModalAd.defaultProps = {};
+
+//export default ModalAd;

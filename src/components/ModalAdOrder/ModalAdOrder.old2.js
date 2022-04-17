@@ -5,14 +5,25 @@ import axios from '../../axios';
 
 import ModalBS from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
+import Figure from 'react-bootstrap/Figure';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import InputGroup from 'react-bootstrap/InputGroup';
+
+import UploadImage from '../UploadImage/UploadImage';
 
 import _ from "lodash";
 
 import { Responsive, WidthProvider } from "react-grid-layout";
-
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
+console.log("ResponsiveReactGridLayout");
+console.log(ResponsiveReactGridLayout);
 
 class ShowcaseLayout extends Component {
   constructor(props) {
@@ -102,7 +113,10 @@ class ShowcaseLayout extends Component {
           layouts={this.state.layouts}
           onBreakpointChange={this.onBreakpointChange}
           onLayoutChange={this.onLayoutChange}
+          // WidthProvider option
           measureBeforeMount={false}
+          // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
+          // and set `measureBeforeMount={true}`.
           useCSSTransforms={this.state.mounted}
           compactType={this.state.compactType}
           preventCollision={!this.state.compactType}
@@ -174,6 +188,50 @@ class GridLayout extends React.Component {
   }
 }
 
+/* class ReactGridLayout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { layout: [] };
+    this.onLayoutChange = this.onLayoutChange.bind(this);
+    this.adList = [];
+    //async () => this.data = await axios.get('ads');
+    this.getData = this.getData.bind();
+  }
+
+  onLayoutChange(layout) {
+    this.setState({ layout: layout });
+  }
+
+  getData() {
+    async () => {
+      const {data} = await axios.get('ads');
+      this.setAdList(data);
+    }
+  }
+
+  stringifyLayout() {
+    return this.state.layout.map(function(l) {
+      return (
+        <div className="layoutItem" key={l.i}>
+          <b>{l.i}</b>: [{l.x}, {l.y}, {l.w}, {l.h}]
+        </div>
+      );
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="layoutJSON">
+          Displayed as <code>[x, y, w, h]</code>:
+          <div className="columns">{this.stringifyLayout()}</div>
+        </div>
+        <ShowcaseLayout onLayoutChange={this.onLayoutChange} />
+      </div>
+    );
+  }
+} */
+
 export default function ModalAdOrder ({ show, onHide, closeModal }) {
 
   const[grid, setGrid] = useState({});
@@ -228,11 +286,18 @@ export default function ModalAdOrder ({ show, onHide, closeModal }) {
       layout1.push({ i: value._id, x: value.order.x, y: value.order.y, w: adFormatList.filter(af => af._id == value.adFormatId)[0] ? adFormatList.filter(af => af._id == value.adFormatId)[0]?.width ?? 6 : 6, h: adFormatList.filter(af => af._id == value.adFormatId)[0] ? adFormatList.filter(af => af._id == value.adFormatId)[0]?.height ?? 2 : 2 })
   })
 
+  console.log("LAYOUT")
+  console.log(layout1)
+  console.log(adFormatList.filter(af => af._id == "611872d13a1f1854a4681008" )[0] ? adFormatList.filter(af => af._id == "611872d13a1f1854a4681008" )[0].width : 0)
   var layout = { lg: layout1 };
+
+  console.log("LAYOUT2")
+  console.log(grid)
 
   const[image, setImage] = useState();
 
   async function putAllAds() {
+    /* grid.map((g) => { console.log(g.order.x) }) */
     console.log("updatedGrid");
     adList.map(async (al, i) => {
       if (al.order.x != updatedGrid[i].x || al.order.y != updatedGrid[i].y) {
@@ -253,8 +318,33 @@ export default function ModalAdOrder ({ show, onHide, closeModal }) {
           'Authorization': `Bearer ${token}`
         }
         await axios.put(`/ads/${al._id}`, request, { headers: headers })
+        /* alert("enviou") */
+        console.log("REQUEST")
+        console.log(request)
       }
     })
+
+    console.log(adList);
+    console.log(updatedGrid);
+
+    /* const request = {
+      description: description,
+      adFormatId: adFormatId,
+      urls: [
+        "https://poliedroscatalog.blob.core.windows.net/catalog-images/278ff8eb-e26c-42a0-aaf8-d72db5fc2b22.jpg"
+      ],
+      order: {
+        x: 0,
+        y: 0
+      }
+    }
+    const token = res2.data.token
+    const headers =  {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+    await axios.put(`/ads/${id}`, request, { headers: headers })
+    alert("enviou") */
   }
 
   return (
@@ -270,13 +360,17 @@ export default function ModalAdOrder ({ show, onHide, closeModal }) {
       </div>
       <ModalBS.Body style={{  }}>
         <h4 style={{ marginBottom: "1.5rem"}}>Ordernar Anúncios</h4>
+        {/* <ReactGridLayout /> */}
+        {/* <GridLayout /> */}
+        {/* <div style={{ display: "flex" }}> */}
         <ResponsiveReactGridLayout
           className="layout"
           layouts={layout}
           breakpoints={{ lg: 1200 }}
           cols={{ lg: 12 }}
-          rowHeight={128}
+          rowHeight={128} //{281}
           width={1200}
+          //onLayoutChange={layout}
           onLayoutChange={(e) => { setUpdatedGrid(e) }}
         >
           {
@@ -295,7 +389,8 @@ export default function ModalAdOrder ({ show, onHide, closeModal }) {
             )
           }
         </ResponsiveReactGridLayout>
-
+        { console.log("ResponsiveReactGridLayout.length") }
+        { console.log(ResponsiveReactGridLayout.breakpoints) }
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           <div style={{ textAlign: "center" }}>
             <Button style={{ width: "auto" }} onClick={ () => putAllAds() }>Salvar Ordem dos Anúncios</Button>
@@ -315,3 +410,5 @@ export default function ModalAdOrder ({ show, onHide, closeModal }) {
 ModalAdOrder.propTypes = {};
 
 ModalAdOrder.defaultProps = {};
+
+//export default ModalAdOrder;
